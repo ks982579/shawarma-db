@@ -12,3 +12,11 @@ This is, at the moment, a toy project for me to learn Rust.
 I figured building a database might be one of the best exercises for learning a programming language.
 It has all of the key features of interacting with a file system, creating a CLI, and even (hopefully) an HTTP webserver.
 Depending on how it goes, I would also like to create a UI, either browser based or desktop, but still unsure the language. 
+
++ [ ] create database
++ [ ] create tables, columns, rows, data types
++ [ ] connect to the database to make updated
++ [ ] delete things
++ [ ] update things
++ [ ] read things
++ [ ] Small test suite for unit test of operations. 
