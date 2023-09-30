@@ -20,3 +20,15 @@ Depending on how it goes, I would also like to create a UI, either browser based
 + [ ] update things
 + [ ] read things
 + [ ] Small test suite for unit test of operations. 
+
+## The Journey
+
+This is a learning experience for me. As I got to learn Python, Django, and React by building small task tracking application, I intend to do the same with Rust by building this database. 
+
+### Creating the Database
+
+Basically, I am going to have to get friendly with the [std::fs](https://doc.rust-lang.org/std/fs/index.html) module in Rust. 
+
+I used the [std::fs::create_dir_all()](https://doc.rust-lang.org/std/fs/fn.create_dir.html) function to create the directory. for the user's database.
+
+The [File struct](https://doc.rust-lang.org/std/fs/struct.File.html) has many methods
