@@ -12,10 +12,11 @@ struct Record<T> {
 fn main() {
     println!("Hello, world!");
     let mut database: fs::File = create_database();
-    database.write_all(b"writing to file.").unwrap();
-    println!("{:?}", database);
+    // database.write_all(b"writing to file.").unwrap();
+    // println!("{:?}", &database);
 
-    delete_database();
+    // delete_database();
+    create_columns(&mut database);
 }
 
 fn create_database() ->  fs::File {
@@ -30,16 +31,20 @@ fn create_database() ->  fs::File {
 }
 
 fn delete_database() {
-    let database_path: &Path = Path::new("./database");
+    let mut database_path: &Path = Path::new("./database");
     fs::remove_dir_all(database_path).unwrap()
 }
 
-fn create_table() {
-    unimplemented!();
+fn create_table(database: &mut fs::File) {
+    // unimplemented!();
+    database.write(b"columns").unwrap();
+    ()
 }
 
-fn create_columns() {
-    unimplemented!();
+fn create_columns(database: &mut fs::File) {
+    // unimplemented!();
+    database.write_all(b"| names | address |").unwrap();
+    ()
 }
 
 fn create_record() {

@@ -37,3 +37,5 @@ I used the [std::fs::create_dir_all()](https://doc.rust-lang.org/std/fs/fn.creat
 I am also noticing the [std::io::Result](https://doc.rust-lang.org/std/io/type.Result.html) type that is used across IO operations and avoids wiring `io::Error`. 
 
 The [File struct](https://doc.rust-lang.org/std/fs/struct.File.html) has many methods
+
+Next step is to, I think, export functions into a module to independently test as I go.
