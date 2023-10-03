@@ -17,6 +17,7 @@ fn main() {
 
     // delete_database();
     create_columns(&mut database);
+    create_record(&mut database);
 }
 
 fn create_database() ->  fs::File {
@@ -25,8 +26,14 @@ fn create_database() ->  fs::File {
     fs::create_dir_all(path).unwrap();  // Actuallly returns ()
     
     let file_path: &Path = Path::new("./database/db.shwrm");
-    let file: fs::File = fs::File::create(file_path).unwrap();
-    return file;
+    if file_path.try_exists().unwrap() {
+        let file: fs::File = fs::File::create(file_path).unwrap();
+        return file;
+    } else {
+        let file: fs::File = fs::File::options().append(true).open(file_path).unwrap();
+        todo!("This shouldn't work, you need fs::OpenOptions::new().append(true).open(...)");
+        return file;
+    }
     // Ok(())
 }
 
@@ -43,12 +50,15 @@ fn create_table(database: &mut fs::File) {
 
 fn create_columns(database: &mut fs::File) {
     // unimplemented!();
-    database.write_all(b"| names | address |").unwrap();
+    database.write_all(b"| names | address |\n").unwrap();
+    database.
     ()
 }
 
-fn create_record() {
-    unimplemented!();
+fn create_record(database: &mut fs::File) {
+    // unimplemented!();
+    database.write_all(b"| Jane Doe | T23 YT44|\n").unwrap();
+    ()
 }
 
 fn create_records() {
